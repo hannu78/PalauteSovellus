@@ -7,6 +7,9 @@ var bodyParser = require("body-parser");
 var session = require("express-session");
 var uuid = require('uuid');
 
+var mysql = require("./modules/mysql");
+var userData = require("./modules/userData");
+
 //Start express
 var app = express();
 
@@ -29,9 +32,15 @@ app.use(session({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use('/', express.static(path.join(__dirname, '../frontend/views')));
+app.use('/', express.static(path.join(__dirname, '../frontend/view')));
 app.use('/frontend/module', express.static(path.join(__dirname, '../frontend/module')));
+app.use('/frontend/lib', express.static(path.join(__dirname, '../frontend/lib')));
+app.use('/frontend/css', express.static(path.join(__dirname, '../frontend/css')));
+app.use('/frontend/modules', express.static(path.join(__dirname, '../frontend/modules')));
+app.use('/frontend/controllers', express.static(path.join(__dirname, '../frontend/controllers')));
+app.use('/frontend/factories', express.static(path.join(__dirname, '../frontend/factories')));
 
+app.use('/userdata', userData);
 
 app.use(function (req, res, next) {
     //console.log(req.session);

@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+
+<head>
+    <meta charset = "utf-8">
+    <link href = "/frontend/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href = "/frontend/css/bootstrap-theme.min.css" type="text/css" rel="stylesheet">
+    <link href = "/frontend/css/angular-flash.min.css" type="text/css" rel="stylesheet">
+    <link href = "/frontend/css/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <form class='container'>
+        <h3>Tarkista käyttäjätietosi ja korjaa tarvittaessa. Mikäli haluat yhteydenottoa asiassa, anna toimiva puhelinnumero ja sähköpostiosoite.</h3>
+        <input class="form-control" type = "text" placeholder = "Nimi" ng-model = "name"><br/>
+        <input class="form-control" type = "text" placeholder = "Sähköpostiosoite" ng-model = "email"><br/>
+        <input class="form-control" type = "text" placeholder = "Puhelinnumero" ng-model = "phone"><br/>
+        <input class="btn btn-default" type = "button" value = "Tallenna" ng-click = "tallennusClicked()">
+    </form>
+</body>

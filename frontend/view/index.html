@@ -3,23 +3,29 @@
 <html ng-app = 'main_module'>
     <head>
         <meta charset = "utf-8">
-        <title>PalauteSovellus</title>
+        <title>PalauteSovellus - Oulun NMKY</title>
         <link href = "/frontend/css/bootstrap.min.css" type="text/css" rel="stylesheet">
         <link href = "/frontend/css/bootstrap-theme.min.css" type="text/css" rel="stylesheet">
         <link href = "/frontend/css/angular-flash.min.css" type="text/css" rel="stylesheet">
         <link href = "/frontend/css/style.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <!--This is a placeholder for our views in this app-->
-        <div ng-view></div>
+        <div class = "container">
+            <h1>Oulun NMKY:n palautesovellus</h1><br/>
+            <!--This is a placeholder for our views in this app-->
+            <div ng-view></div>
+        </div>
         <script src = "/frontend/lib/jquery-2.1.4.min.js"></script>
         <script src = "/frontend/lib/angular.min.js"></script>
         <script src = "/frontend/lib/angular-route.min.js"></script>
         <script src = "/frontend/lib/angular-resource.min.js"></script>
         <script src = "/frontend/lib/angular-flash.min.js"></script>
         <script src = "/frontend/module/mainModule.js"></script>
+        <script src = "/frontend/controllers/userDataController.js"></script>
+        <script src = "/frontend/factories/userDataFactory.js"></script>
+        
     </body>
     <footer>
-            <p>Copyright 2016 by Hannu Lisko</p>    
+            <p>Copyright 2016 by Hannu Lisko & Oulun NMKY ry</p>    
     </footer>
 </html>
