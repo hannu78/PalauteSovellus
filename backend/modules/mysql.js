@@ -6,8 +6,8 @@ var server = require('../server');
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    //password: 'halikannu-2015',
-    password: 'root',
+    password: 'halikannu-2015',
+    //password: 'root',
     database: 'palautedb'
 });
 
