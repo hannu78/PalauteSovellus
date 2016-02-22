@@ -8,4 +8,8 @@ router.put('/', function (req, res) {
     mysql.saveUserData(req, res);
 });
 
+router.get('/', function (req, res) {
+   mysql.findByEmail(req, res); 
+});
+
 module.exports = router;

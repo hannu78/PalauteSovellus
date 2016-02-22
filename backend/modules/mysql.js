@@ -6,8 +6,8 @@ var server = require('../server');
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'halikannu-2015',
-    //password: 'root',
+    //password: 'halikannu-2015',
+    password: 'root',
     database: 'palautedb'
 });
 
@@ -22,7 +22,7 @@ connection.connect(function (err) {
 
 exports.saveUserData = function (req, res) {
     // Tässä pitää tsekata että onko käyttäjä jo olemassa ja jos on, päivittää tiedot
-    //connection.query('SELECT * FROM kayttaja WHERE email=?',[req.body.email], function(error, results, fields) {
+    //connection.query('SELECT nimi, puhelin, email FROM kayttaja WHERE email=?',[req.body.email], function(error, results, fields) {
     //    if (error) {
     //        console.log(error);
     //    } else {
@@ -37,5 +37,14 @@ exports.saveUserData = function (req, res) {
            console.log("Success");
            res.status(200).send({status: "Käyttäjä lisätty!"});
        }
+    });
+}
+exports.findByEmail = function (req, res) {
+    connection.query('SELECT nimi, puhelin, email FROM kayttaja WHERE email=?',[req.body.email], function(error, results, fields) {
+        if (error) {
+            console.log(error);
+        } else {
+            res.status(200).send()
+        }    
     });
 }
